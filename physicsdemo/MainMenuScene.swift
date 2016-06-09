@@ -18,6 +18,7 @@ class MainMenuScene: SKScene {
     var frictionButton: MSButtonNode!
     var restitutionButton: MSButtonNode!
     var fieldButton: MSButtonNode!
+    var jointButton: MSButtonNode!
     
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
@@ -77,6 +78,17 @@ class MainMenuScene: SKScene {
             let scene = FieldScene(fileNamed:"FieldScene") as FieldScene!
             skView.presentScene(scene)
         }
+        
+        jointButton = self.childNodeWithName("jointButton") as! MSButtonNode
+        jointButton.selectedHandler =  {
+            let skView = self.view as SKView!
+            let scene = JointScene(fileNamed:"JointScene") as JointScene!
+            
+            /* Show debug */
+            skView.showsPhysics = true
+            skView.presentScene(scene)
+        }
+
 
     
     }
