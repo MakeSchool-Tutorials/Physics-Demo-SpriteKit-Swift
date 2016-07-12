@@ -27,6 +27,7 @@ class MainMenuScene: SKScene {
         distanceButton.selectedHandler =  {
             let skView = self.view as SKView!
             let scene = DistanceScene(fileNamed:"DistanceScene") as DistanceScene!
+            scene.scaleMode = .AspectFit
             skView.presentScene(scene)
         }
         
@@ -34,6 +35,7 @@ class MainMenuScene: SKScene {
         velocityButton.selectedHandler =  {
             let skView = self.view as SKView!
             let scene = VelocityScene(fileNamed:"VelocityScene") as VelocityScene!
+            scene.scaleMode = .AspectFit
             skView.presentScene(scene)
         }
         
@@ -41,6 +43,7 @@ class MainMenuScene: SKScene {
         accelerationButton.selectedHandler =  {
             let skView = self.view as SKView!
             let scene = AccelerationScene(fileNamed:"AccelerationScene") as AccelerationScene!
+            scene.scaleMode = .AspectFit
             skView.presentScene(scene)
         }
         
@@ -48,6 +51,7 @@ class MainMenuScene: SKScene {
         forceButton.selectedHandler =  {
             let skView = self.view as SKView!
             let scene = ForceScene(fileNamed:"ForceScene") as ForceScene!
+            scene.scaleMode = .AspectFit
             skView.presentScene(scene)
         }
         
@@ -55,6 +59,7 @@ class MainMenuScene: SKScene {
         impulseButton.selectedHandler =  {
             let skView = self.view as SKView!
             let scene = ImpulseScene(fileNamed:"ImpulseScene") as ImpulseScene!
+            scene.scaleMode = .AspectFit
             skView.presentScene(scene)
         }
         
@@ -62,6 +67,7 @@ class MainMenuScene: SKScene {
         frictionButton.selectedHandler =  {
             let skView = self.view as SKView!
             let scene = FrictionScene(fileNamed:"FrictionScene") as FrictionScene!
+            scene.scaleMode = .AspectFit
             skView.presentScene(scene)
         }
         
@@ -69,6 +75,7 @@ class MainMenuScene: SKScene {
         restitutionButton.selectedHandler =  {
             let skView = self.view as SKView!
             let scene = RestitutionScene(fileNamed:"RestitutionScene") as RestitutionScene!
+            scene.scaleMode = .AspectFit
             skView.presentScene(scene)
         }
         
@@ -76,6 +83,7 @@ class MainMenuScene: SKScene {
         fieldButton.selectedHandler =  {
             let skView = self.view as SKView!
             let scene = FieldScene(fileNamed:"FieldScene") as FieldScene!
+            scene.scaleMode = .AspectFit
             skView.presentScene(scene)
         }
         
@@ -83,6 +91,7 @@ class MainMenuScene: SKScene {
         jointButton.selectedHandler =  {
             let skView = self.view as SKView!
             let scene = JointScene(fileNamed:"JointScene") as JointScene!
+            scene.scaleMode = .AspectFit
             
             /* Show debug */
             skView.showsPhysics = true
