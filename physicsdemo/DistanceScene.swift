@@ -33,6 +33,7 @@ class DistanceScene: SKScene {
                 actionButton.selectedHandler =  {
                     let skView = self.view as SKView!
                     let scene = MainMenuScene(fileNamed:"MainMenuScene") as MainMenuScene!
+                    scene.scaleMode = .AspectFit
                     skView.presentScene(scene)
                 }
             }
