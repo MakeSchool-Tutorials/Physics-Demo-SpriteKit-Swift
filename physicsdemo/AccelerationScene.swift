@@ -21,8 +21,8 @@ class AccelerationScene: SKScene {
     var velocityLabel2: SKLabelNode!
     var distanceLabel2: SKLabelNode!
     
-    var node1Start = CGPointZero
-    var node2Start = CGPointZero
+    var node1Start = CGPoint.zero
+    var node2Start = CGPoint.zero
     
     var distance1:CGFloat  = 0 {
         didSet {
@@ -46,34 +46,34 @@ class AccelerationScene: SKScene {
                 actionButton.selectedHandler =  {
                     let skView = self.view as SKView!
                     let scene = MainMenuScene(fileNamed:"MainMenuScene") as MainMenuScene!
-                    scene.scaleMode = .AspectFit
-                    skView.presentScene(scene)
+                    scene?.scaleMode = .aspectFit
+                    skView?.presentScene(scene)
                 }
             }
         }
     }
     
-    override func didMoveToView(view: SKView) {
+    override func didMove(to view: SKView) {
         /* Setup your scene here */
         
-        node1 = self.childNodeWithName("node1") as! SKSpriteNode
+        node1 = self.childNode(withName: "node1") as! SKSpriteNode
         node1.physicsBody?.mass = 1
         node1Start = node1.position
         
-        node2 = self.childNodeWithName("node2") as! SKSpriteNode
+        node2 = self.childNode(withName: "node2") as! SKSpriteNode
         node2.physicsBody?.mass = 1
         node2Start = node2.position
         
-        accelerationLabel1 = self.childNodeWithName("accelerationLabel1") as! SKLabelNode
-        velocityLabel1 = self.childNodeWithName("velocityLabel1") as! SKLabelNode
-        distanceLabel1 = self.childNodeWithName("distanceLabel1") as! SKLabelNode
+        accelerationLabel1 = self.childNode(withName: "accelerationLabel1") as! SKLabelNode
+        velocityLabel1 = self.childNode(withName: "velocityLabel1") as! SKLabelNode
+        distanceLabel1 = self.childNode(withName: "distanceLabel1") as! SKLabelNode
         
-        accelerationLabel2 = self.childNodeWithName("accelerationLabel2") as! SKLabelNode
-        velocityLabel2 = self.childNodeWithName("velocityLabel2") as! SKLabelNode
-        distanceLabel2 = self.childNodeWithName("distanceLabel2") as! SKLabelNode
+        accelerationLabel2 = self.childNode(withName: "accelerationLabel2") as! SKLabelNode
+        velocityLabel2 = self.childNode(withName: "velocityLabel2") as! SKLabelNode
+        distanceLabel2 = self.childNode(withName: "distanceLabel2") as! SKLabelNode
         
-        actionButton = self.childNodeWithName("actionButton") as! MSButtonNode
-        actionLabel = actionButton.childNodeWithName("actionLabel") as! SKLabelNode
+        actionButton = self.childNode(withName: "actionButton") as! MSButtonNode
+        actionLabel = actionButton.childNode(withName: "actionLabel") as! SKLabelNode
         
         actionButton.selectedHandler = {
             self.running = true
@@ -82,12 +82,12 @@ class AccelerationScene: SKScene {
         }
     }
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         /* Called when a touch begins */
         
     }
     
-    override func update(currentTime: CFTimeInterval) {
+    override func update(_ currentTime: TimeInterval) {
         /* Called before each frame is rendered */
         
         if running == false { return }

@@ -35,53 +35,53 @@ class ForceScene: SKScene {
                 actionLabel.text = "Exit Demo"
                 
                 actionButton.selectedHandler =  {
-                    let skView = self.view as SKView!
-                    let scene = MainMenuScene(fileNamed:"MainMenuScene") as MainMenuScene!
-                    scene.scaleMode = .AspectFit
+                    let skView = self.view!
+                    let scene = MainMenuScene(fileNamed:"MainMenuScene")!
+                    scene.scaleMode = .aspectFit
                     skView.presentScene(scene)
                 }
             }
         }
     }
     
-    override func didMoveToView(view: SKView) {
+    override func didMove(to view: SKView) {
         /* Setup your scene here */
         
-        node1 = self.childNodeWithName("node1") as! SKSpriteNode
+        node1 = self.childNode(withName: "node1") as! SKSpriteNode
         node1.physicsBody?.mass = 1
 
-        node2 = self.childNodeWithName("node2") as! SKSpriteNode
+        node2 = self.childNode(withName: "node2") as! SKSpriteNode
         node2.physicsBody?.mass = 1
 
-        node3 = self.childNodeWithName("node3") as! SKSpriteNode
+        node3 = self.childNode(withName: "node3") as! SKSpriteNode
         node3.physicsBody?.mass = 5
 
-        forceLabel1 = self.childNodeWithName("forceLabel1") as! SKLabelNode
-        massLabel1 = self.childNodeWithName("massLabel1") as! SKLabelNode
-        velocityLabel1 = self.childNodeWithName("velocityLabel1") as! SKLabelNode
+        forceLabel1 = self.childNode(withName: "forceLabel1") as! SKLabelNode
+        massLabel1 = self.childNode(withName: "massLabel1") as! SKLabelNode
+        velocityLabel1 = self.childNode(withName: "velocityLabel1") as! SKLabelNode
         
-        forceLabel2 = self.childNodeWithName("forceLabel2") as! SKLabelNode
-        massLabel2 = self.childNodeWithName("massLabel2") as! SKLabelNode
-        velocityLabel2 = self.childNodeWithName("velocityLabel2") as! SKLabelNode
+        forceLabel2 = self.childNode(withName: "forceLabel2") as! SKLabelNode
+        massLabel2 = self.childNode(withName: "massLabel2") as! SKLabelNode
+        velocityLabel2 = self.childNode(withName: "velocityLabel2") as! SKLabelNode
         
-        forceLabel3 = self.childNodeWithName("forceLabel3") as! SKLabelNode
-        massLabel3 = self.childNodeWithName("massLabel3") as! SKLabelNode
-        velocityLabel3 = self.childNodeWithName("velocityLabel3") as! SKLabelNode
+        forceLabel3 = self.childNode(withName: "forceLabel3") as! SKLabelNode
+        massLabel3 = self.childNode(withName: "massLabel3") as! SKLabelNode
+        velocityLabel3 = self.childNode(withName: "velocityLabel3") as! SKLabelNode
         
-        actionButton = self.childNodeWithName("actionButton") as! MSButtonNode
-        actionLabel = actionButton.childNodeWithName("actionLabel") as! SKLabelNode
+        actionButton = self.childNode(withName: "actionButton") as! MSButtonNode
+        actionLabel = actionButton.childNode(withName: "actionLabel") as! SKLabelNode
         
         actionButton.selectedHandler = {
             self.running = true
         }
     }
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         /* Called when a touch begins */
         
     }
     
-    override func update(currentTime: CFTimeInterval) {
+    override func update(_ currentTime: TimeInterval) {
         /* Called before each frame is rendered */
         
         if running == false { return }

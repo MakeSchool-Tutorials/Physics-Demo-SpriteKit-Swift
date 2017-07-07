@@ -20,78 +20,78 @@ class MainMenuScene: SKScene {
     var fieldButton: MSButtonNode!
     var jointButton: MSButtonNode!
     
-    override func didMoveToView(view: SKView) {
+    override func didMove(to view: SKView) {
         /* Setup your scene here */
         
-        distanceButton = self.childNodeWithName("distanceButton") as! MSButtonNode
+        distanceButton = self.childNode(withName: "distanceButton") as! MSButtonNode
         distanceButton.selectedHandler =  {
-            let skView = self.view as SKView!
-            let scene = DistanceScene(fileNamed:"DistanceScene") as DistanceScene!
-            scene.scaleMode = .AspectFit
+            let skView = self.view!
+            let scene = DistanceScene(fileNamed:"DistanceScene")!
+            scene.scaleMode = .aspectFit
             skView.presentScene(scene)
         }
         
-        velocityButton = self.childNodeWithName("velocityButton") as! MSButtonNode
+        velocityButton = self.childNode(withName: "velocityButton") as! MSButtonNode
         velocityButton.selectedHandler =  {
-            let skView = self.view as SKView!
-            let scene = VelocityScene(fileNamed:"VelocityScene") as VelocityScene!
-            scene.scaleMode = .AspectFit
+            let skView = self.view!
+            let scene = VelocityScene(fileNamed:"VelocityScene")!
+            scene.scaleMode = .aspectFit
             skView.presentScene(scene)
         }
         
-        accelerationButton = self.childNodeWithName("accelerationButton") as! MSButtonNode
+        accelerationButton = self.childNode(withName: "accelerationButton") as! MSButtonNode
         accelerationButton.selectedHandler =  {
-            let skView = self.view as SKView!
-            let scene = AccelerationScene(fileNamed:"AccelerationScene") as AccelerationScene!
-            scene.scaleMode = .AspectFit
+            let skView = self.view!
+            let scene = AccelerationScene(fileNamed:"AccelerationScene")!
+            scene.scaleMode = .aspectFit
             skView.presentScene(scene)
         }
         
-        forceButton = self.childNodeWithName("forceButton") as! MSButtonNode
+        forceButton = self.childNode(withName: "forceButton") as! MSButtonNode
         forceButton.selectedHandler =  {
-            let skView = self.view as SKView!
-            let scene = ForceScene(fileNamed:"ForceScene") as ForceScene!
-            scene.scaleMode = .AspectFit
+            let skView = self.view!
+            let scene = ForceScene(fileNamed:"ForceScene")!
+            scene.scaleMode = .aspectFit
             skView.presentScene(scene)
         }
         
-        impulseButton = self.childNodeWithName("impulseButton") as! MSButtonNode
+        impulseButton = self.childNode(withName: "impulseButton") as! MSButtonNode
         impulseButton.selectedHandler =  {
-            let skView = self.view as SKView!
-            let scene = ImpulseScene(fileNamed:"ImpulseScene") as ImpulseScene!
-            scene.scaleMode = .AspectFit
+            let skView = self.view!
+            let scene = ImpulseScene(fileNamed:"ImpulseScene")!
+            scene.scaleMode = .aspectFit
             skView.presentScene(scene)
         }
         
-        frictionButton = self.childNodeWithName("frictionButton") as! MSButtonNode
+        frictionButton = self.childNode(withName: "frictionButton") as! MSButtonNode
         frictionButton.selectedHandler =  {
-            let skView = self.view as SKView!
-            let scene = FrictionScene(fileNamed:"FrictionScene") as FrictionScene!
-            scene.scaleMode = .AspectFit
+            let skView = self.view!
+            let scene = FrictionScene(fileNamed:"FrictionScene")!
+            scene.scaleMode = .aspectFit
             skView.presentScene(scene)
         }
         
-        restitutionButton = self.childNodeWithName("restitutionButton") as! MSButtonNode
+        restitutionButton = self.childNode(withName: "restitutionButton") as! MSButtonNode
         restitutionButton.selectedHandler =  {
-            let skView = self.view as SKView!
-            let scene = RestitutionScene(fileNamed:"RestitutionScene") as RestitutionScene!
-            scene.scaleMode = .AspectFit
+            let skView = self.view!
+            let scene = RestitutionScene(fileNamed:"RestitutionScene")!
+            scene.scaleMode = .aspectFit
             skView.presentScene(scene)
         }
         
-        fieldButton = self.childNodeWithName("fieldButton") as! MSButtonNode
+        fieldButton = self.childNode(withName: "fieldButton") as! MSButtonNode
         fieldButton.selectedHandler =  {
-            let skView = self.view as SKView!
-            let scene = FieldScene(fileNamed:"FieldScene") as FieldScene!
-            scene.scaleMode = .AspectFit
+            let skView = self.view!
+            let scene = FieldScene(fileNamed:"FieldScene")!
+            scene.scaleMode = .aspectFit
             skView.presentScene(scene)
         }
         
-        jointButton = self.childNodeWithName("jointButton") as! MSButtonNode
+        jointButton = self.childNode(withName: "jointButton") as! MSButtonNode
         jointButton.selectedHandler =  {
-            let skView = self.view as SKView!
-            let scene = JointScene(fileNamed:"JointScene") as JointScene!
-            scene.scaleMode = .AspectFit
+            let skView = self.view!
+            let scene = JointScene(fileNamed:"JointScene")!
+            scene.scaleMode = .aspectFit
             
             /* Show debug */
             skView.showsPhysics = true
@@ -102,11 +102,11 @@ class MainMenuScene: SKScene {
     
     }
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         /* Called when a touch begins */
     }
     
-    override func update(currentTime: CFTimeInterval) {
+    override func update(_ currentTime: TimeInterval) {
         /* Called before each frame is rendered */
     }
 
